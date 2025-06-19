@@ -55,18 +55,31 @@ public class Principal_1 {
             switch (txtOpcion){
                 case "saldo" :
                     System.out.println("su saldo es " + cliente1.getSaldoCliente() );
+                    return;
+
+                case "retiro":
+                    System.out.println("cuanto desea retirar");
+                int retiro = lol.nextInt();
+
+                if (retiro > 0 && retiro < cliente1.getSaldoCliente()){
+                    cliente1.setSaldoCliente( retiro - cliente1.getSaldoCliente() );
+                }else {
+                    System.out.println("saldo insuficiente" + "su saldo es de " + cliente1.getSaldoCliente());
+                    break;
+                }
 
                 case "deposito":
-                    System.out.println("cuanto desea retirar");
-                int deposito = lol.nextInt();
+                    System.out.println("cuanto desea deposito");
+                    int deposito = lol.nextInt();
 
-                if (deposito > 0){
-                    cliente1.setSaldoCliente( deposito + cliente1.getSaldoCliente() );
-                }else if (deposito > cliente1.getSaldoCliente()){
-                    System.out.println("saldo insuficiente");
-                }else {
-                    System.out.println("dato no almitido");
-                }// aqui falta algunos datos para que sea mas  y me jor la app de banco
+                    if (deposito > 0 ){
+                        cliente1.setSaldoCliente( deposito + cliente1.getSaldoCliente() );
+                    }else{
+                        System.out.println("saldo insuficiente");
+                        System.out.println(cliente1.getSaldoCliente());
+                    }
+
+                // aqui falta algunos datos para que sea mas  y me jor la app de banco
 
 
             }
