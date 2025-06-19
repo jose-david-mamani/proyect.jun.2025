@@ -2,7 +2,6 @@ package interface1;
 
 import SectorPrivado.Cliente;
 
-import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -19,8 +18,11 @@ public class Principal_1 {
 
 //MENSAJES POR DEFECTOS.. OSEA QUE SE VAN A UTILIZAR A MENUDOS Y LA PARA EVITAR LA REPETICON  DE CODIGO
 
- //       String WelcomeClient = """
- //              Bienvenido a banco J-M-P \n  Querido %s,%s""".formatted(nameClient, lastNameClient);
+        String nameClient = "krax";
+        String lastNameClient ="krax";
+
+        String WelcomeClient = """
+              Bienvenido a banco J-M-P \n  Querido %s,%s""".formatted(nameClient, lastNameClient);
 
         String nombre = " nombre ".toUpperCase();
         String apellido = " apellido".toUpperCase();
@@ -39,22 +41,41 @@ public class Principal_1 {
         Cliente cliente1 = new Cliente();
         cliente1.getSaldoCliente();
 
-  /*      if (Objects.equals(txt, nameClient) || Objects.equals(txt2, lastNameClient)) {
+        if (Objects.equals(txt, nameClient) || Objects.equals(txt2, lastNameClient)) {
             System.out.println("muy bien".toUpperCase());
 
             System.out.println(WelcomeClient);
 
-            String txtOpcion = lol.nextLine();
+            System.out.println("que desea hacer "  );
 
 
+
+
+            String txtOpcion = lol.next();
             switch (txtOpcion){
                 case "saldo" :
-                    System.out.println("su saldo es " + cliente1 );
+                    System.out.println("su saldo es " + cliente1.getSaldoCliente() );
+
+                case "deposito":
+                    System.out.println("cuanto desea retirar");
+                int deposito = lol.nextInt();
+
+                if (deposito > 0){
+                    cliente1.setSaldoCliente( deposito + cliente1.getSaldoCliente() );
+                }else if (deposito > cliente1.getSaldoCliente()){
+                    System.out.println("saldo insuficiente");
+                }else {
+                    System.out.println("dato no almitido");
+                }// aqui falta algunos datos para que sea mas  y me jor la app de banco
+
+
             }
 
+            System.out.println(cliente1.getSaldoCliente());
+
         } else{
-            System.out.println("no es cliemte".toUpperCase());
+            System.out.println("no es cliemte ,lo siento".toUpperCase());
 }
-*/
+
     }
 }

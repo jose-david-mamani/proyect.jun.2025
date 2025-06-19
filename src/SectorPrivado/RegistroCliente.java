@@ -46,11 +46,13 @@ public class RegistroCliente {
 
 
         System.out.println("Hola señor " + cliente1.getNombreCliente() +"." +
-                cliente1.getApellidoCliente() + "\n" + "Con edad de " + cliente1.getEdad() + "años"
+                cliente1.getApellidoCliente() + "\n" + "Con edad de " + cliente1.getEdad() + " años"
         + "\n" + "Su dni es " + cliente1.getNumeroDni() + "\n" +
                 "Su saldo es de $" + cliente1.getSaldoCliente() + " ARS");
 
         // la bienvenida con su respectivo nombre y apellido y su saldo
+
+        // LO SIGUIENTE SERA UNA SECCION DE CODIGO QUE YO LO LLAMO
         
         System.out.println(cliente1.getNombreCliente());
         System.out.println(cliente1.getApellidoCliente());
