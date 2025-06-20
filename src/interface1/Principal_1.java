@@ -29,6 +29,7 @@ public class Principal_1 {
         String textQuestion = " INGRECE SU ";
         // AQUI SE PRODUCE LA PARTE EN DONDE SE LE PREGUNTA SU NOMBRE Y APELLIDO
 
+
         System.out.println(textQuestion + nombre);
         String txt = lol.next();
 
@@ -40,6 +41,7 @@ public class Principal_1 {
 
         Cliente cliente1 = new Cliente();
         cliente1.getSaldoCliente();
+        String saldClient = "saldo insuficiente" + "su saldo es de " + cliente1.getSaldoCliente();
 
         if (Objects.equals(txt, nameClient) || Objects.equals(txt2, lastNameClient)) {
             System.out.println("muy bien".toUpperCase());
@@ -54,7 +56,7 @@ public class Principal_1 {
             String txtOpcion = lol.next();
             switch (txtOpcion){
                 case "saldo" :
-                    System.out.println("su saldo es " + cliente1.getSaldoCliente() );
+                    System.out.println(saldClient);
                     return;
 
                 case "retiro":
@@ -64,7 +66,7 @@ public class Principal_1 {
                 if (retiro > 0 && retiro < cliente1.getSaldoCliente()){
                     cliente1.setSaldoCliente( retiro - cliente1.getSaldoCliente() );
                 }else {
-                    System.out.println("saldo insuficiente" + "su saldo es de " + cliente1.getSaldoCliente());
+                    System.out.println(saldClient);
                     break;
                 }
 
@@ -80,6 +82,7 @@ public class Principal_1 {
                     }
 
                 // aqui falta algunos datos para que sea mas  y me jor la app de banco
+                     // falta mas mejoras y mas avancess
 
 
             }
